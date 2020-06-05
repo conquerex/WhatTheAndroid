@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../AndroidLab.iml" filepath="$PROJECT_DIR$/../AndroidLab.iml" group="AndroidLab" />
+      <module fileurl="file://$PROJECT_DIR$/../part10_27/part10_27.iml" filepath="$PROJECT_DIR$/../part10_27/part10_27.iml" group="AndroidLab/part10_27" />
+      <module fileurl="file://$PROJECT_DIR$/../part10_28/part10_28.iml" filepath="$PROJECT_DIR$/../part10_28/part10_28.iml" group="AndroidLab/part10_28" />
+      <module fileurl="file://$PROJECT_DIR$/../part10_29/part10_29.iml" filepath="$PROJECT_DIR$/../part10_29/part10_29.iml" group="AndroidLab/part10_29" />
+      <module fileurl="file://$PROJECT_DIR$/../part10_30/part10_30.iml" filepath="$PROJECT_DIR$/../part10_30/part10_30.iml" group="AndroidLab/part10_30" />
+      <module fileurl="file://$PROJECT_DIR$/../part11_32/part11_32.iml" filepath="$PROJECT_DIR$/../part11_32/part11_32.iml" group="AndroidLab/part11_32" />
+      <module fileurl="file://$PROJECT_DIR$/../part11_33/part11_33.iml" filepath="$PROJECT_DIR$/../part11_33/part11_33.iml" group="AndroidLab/part11_33" />
+      <module fileurl="file://$PROJECT_DIR$/../part11_34/part11_34.iml" filepath="$PROJECT_DIR$/../part11_34/part11_34.iml" group="AndroidLab/part11_34" />
+      <module fileurl="file://$PROJECT_DIR$/../part2_3/part2_3.iml" filepath="$PROJECT_DIR$/../part2_3/part2_3.iml" group="AndroidLab/part2_3" />
+      <module fileurl="file://$PROJECT_DIR$/../part2_4/part2_4.iml" filepath="$PROJECT_DIR$/../part2_4/part2_4.iml" group="AndroidLab/part2_4" />
+      <module fileurl="file://$PROJECT_DIR$/../part2_5/part2_5.iml" filepath="$PROJECT_DIR$/../part2_5/part2_5.iml" group="AndroidLab/part2_5" />
+      <module fileurl="file://$PROJECT_DIR$/../part2_6/part2_6.iml" filepath="$PROJECT_DIR$/../part2_6/part2_6.iml" group="AndroidLab/part2_6" />
+      <module fileurl="file://$PROJECT_DIR$/../part2_7/part2_7.iml" filepath="$PROJECT_DIR$/../part2_7/part2_7.iml" group="AndroidLab/part2_7" />
+      <module fileurl="file://$PROJECT_DIR$/../part2_mission/part2_mission.iml" filepath="$PROJECT_DIR$/../part2_mission/part2_mission.iml" group="AndroidLab/part2_mission" />
+      <module fileurl="file://$PROJECT_DIR$/../part3_8/part3_8.iml" filepath="$PROJECT_DIR$/../part3_8/part3_8.iml" group="AndroidLab/part3_8" />
+      <module fileurl="file://$PROJECT_DIR$/../part3_9/part3_9.iml" filepath="$PROJECT_DIR$/../part3_9/part3_9.iml" group="AndroidLab/part3_9" />
+      <module fileurl="file://$PROJECT_DIR$/../part3_mission/part3_mission.iml" filepath="$PROJECT_DIR$/../part3_mission/part3_mission.iml" group="AndroidLab/part3_mission" />
+      <module fileurl="file://$PROJECT_DIR$/../part4_10/part4_10.iml" filepath="$PROJECT_DIR$/../part4_10/part4_10.iml" group="AndroidLab/part4_10" />
+      <module fileurl="file://$PROJECT_DIR$/../part4_11/part4_11.iml" filepath="$PROJECT_DIR$/../part4_11/part4_11.iml" group="AndroidLab/part4_11" />
+      <module fileurl="file://$PROJECT_DIR$/../part4_12/part4_12.iml" filepath="$PROJECT_DIR$/../part4_12/part4_12.iml" group="AndroidLab/part4_12" />
+      <module fileurl="file://$PROJECT_DIR$/../part4_13/part4_13.iml" filepath="$PROJECT_DIR$/../part4_13/part4_13.iml" group="AndroidLab/part4_13" />
+      <module fileurl="file://$PROJECT_DIR$/../part4_mission/part4_mission.iml" filepath="$PROJECT_DIR$/../part4_mission/part4_mission.iml" group="AndroidLab/part4_mission" />
+      <module fileurl="file://$PROJECT_DIR$/part5_14.iml" filepath="$PROJECT_DIR$/part5_14.iml" group="AndroidLab/part5_14" />
+      <module fileurl="file://$PROJECT_DIR$/../part5_15/part5_15.iml" filepath="$PROJECT_DIR$/../part5_15/part5_15.iml" group="AndroidLab/part5_15" />
+      <module fileurl="file://$PROJECT_DIR$/../part5_16/part5_16.iml" filepath="$PROJECT_DIR$/../part5_16/part5_16.iml" group="AndroidLab/part5_16" />
+      <module fileurl="file://$PROJECT_DIR$/../part5_mission/part5_mission.iml" filepath="$PROJECT_DIR$/../part5_mission/part5_mission.iml" group="AndroidLab/part5_mission" />
+      <module fileurl="file://$PROJECT_DIR$/../part6_17/part6_17.iml" filepath="$PROJECT_DIR$/../part6_17/part6_17.iml" group="AndroidLab/part6_17" />
+      <module fileurl="file://$PROJECT_DIR$/../part6_18/part6_18.iml" filepath="$PROJECT_DIR$/../part6_18/part6_18.iml" group="AndroidLab/part6_18" />
+      <module fileurl="file://$PROJECT_DIR$/../part6_mission/part6_mission.iml" filepath="$PROJECT_DIR$/../part6_mission/part6_mission.iml" group="AndroidLab/part6_mission" />
+      <module fileurl="file://$PROJECT_DIR$/../part7_19/part7_19.iml" filepath="$PROJECT_DIR$/../part7_19/part7_19.iml" group="AndroidLab/part7_19" />
+      <module fileurl="file://$PROJECT_DIR$/../part7_20/part7_20.iml" filepath="$PROJECT_DIR$/../part7_20/part7_20.iml" group="AndroidLab/part7_20" />
+      <module fileurl="file://$PROJECT_DIR$/../part7_20_aidl/part7_20_aidl.iml" filepath="$PROJECT_DIR$/../part7_20_aidl/part7_20_aidl.iml" group="AndroidLab/part7_20_aidl" />
+      <module fileurl="file://$PROJECT_DIR$/../part7_21/part7_21.iml" filepath="$PROJECT_DIR$/../part7_21/part7_21.iml" group="AndroidLab/part7_21" />
+      <module fileurl="file://$PROJECT_DIR$/../part7_21_provider/part7_21_provider.iml" filepath="$PROJECT_DIR$/../part7_21_provider/part7_21_provider.iml" group="AndroidLab/part7_21_provider" />
+      <module fileurl="file://$PROJECT_DIR$/../part7_mission/part7_mission.iml" filepath="$PROJECT_DIR$/../part7_mission/part7_mission.iml" group="AndroidLab/part7_mission" />
+      <module fileurl="file://$PROJECT_DIR$/../part8_22/part8_22.iml" filepath="$PROJECT_DIR$/../part8_22/part8_22.iml" group="AndroidLab/part8_22" />
+      <module fileurl="file://$PROJECT_DIR$/../part8_23/part8_23.iml" filepath="$PROJECT_DIR$/../part8_23/part8_23.iml" group="AndroidLab/part8_23" />
+      <module fileurl="file://$PROJECT_DIR$/../part8_mission/part8_mission.iml" filepath="$PROJECT_DIR$/../part8_mission/part8_mission.iml" group="AndroidLab/part8_mission" />
+      <module fileurl="file://$PROJECT_DIR$/../part9_24/part9_24.iml" filepath="$PROJECT_DIR$/../part9_24/part9_24.iml" group="AndroidLab/part9_24" />
+      <module fileurl="file://$PROJECT_DIR$/../part9_25/part9_25.iml" filepath="$PROJECT_DIR$/../part9_25/part9_25.iml" group="AndroidLab/part9_25" />
+      <module fileurl="file://$PROJECT_DIR$/../part9_26/part9_26.iml" filepath="$PROJECT_DIR$/../part9_26/part9_26.iml" group="AndroidLab/part9_26" />
+      <module fileurl="file://$PROJECT_DIR$/../part9_mission/part9_mission.iml" filepath="$PROJECT_DIR$/../part9_mission/part9_mission.iml" group="AndroidLab/part9_mission" />
+    </modules>
+  </component>
+</project>
