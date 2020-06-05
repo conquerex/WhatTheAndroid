@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="testRunner" value="PLATFORM" />
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/.." />
+            <option value="$PROJECT_DIR$/../part10_27" />
+            <option value="$PROJECT_DIR$/../part10_28" />
+            <option value="$PROJECT_DIR$/../part10_29" />
+            <option value="$PROJECT_DIR$/../part10_30" />
+            <option value="$PROJECT_DIR$/../part11_32" />
+            <option value="$PROJECT_DIR$/../part11_33" />
+            <option value="$PROJECT_DIR$/../part11_34" />
+            <option value="$PROJECT_DIR$/../part2_3" />
+            <option value="$PROJECT_DIR$/../part2_4" />
+            <option value="$PROJECT_DIR$/../part2_5" />
+            <option value="$PROJECT_DIR$/../part2_6" />
+            <option value="$PROJECT_DIR$/../part2_7" />
+            <option value="$PROJECT_DIR$/../part2_mission" />
+            <option value="$PROJECT_DIR$/../part3_8" />
+            <option value="$PROJECT_DIR$/../part3_9" />
+            <option value="$PROJECT_DIR$/../part3_mission" />
+            <option value="$PROJECT_DIR$/../part4_10" />
+            <option value="$PROJECT_DIR$/../part4_11" />
+            <option value="$PROJECT_DIR$/../part4_12" />
+            <option value="$PROJECT_DIR$/../part4_13" />
+            <option value="$PROJECT_DIR$/../part4_mission" />
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/../part5_15" />
+            <option value="$PROJECT_DIR$/../part5_16" />
+            <option value="$PROJECT_DIR$/../part5_mission" />
+            <option value="$PROJECT_DIR$/../part6_17" />
+            <option value="$PROJECT_DIR$/../part6_18" />
+            <option value="$PROJECT_DIR$/../part6_mission" />
+            <option value="$PROJECT_DIR$/../part7_19" />
+            <option value="$PROJECT_DIR$/../part7_20" />
+            <option value="$PROJECT_DIR$/../part7_20_aidl" />
+            <option value="$PROJECT_DIR$/../part7_21" />
+            <option value="$PROJECT_DIR$/../part7_21_provider" />
+            <option value="$PROJECT_DIR$/../part7_mission" />
+            <option value="$PROJECT_DIR$/../part8_22" />
+            <option value="$PROJECT_DIR$/../part8_23" />
+            <option value="$PROJECT_DIR$/../part8_mission" />
+            <option value="$PROJECT_DIR$/../part9_24" />
+            <option value="$PROJECT_DIR$/../part9_25" />
+            <option value="$PROJECT_DIR$/../part9_26" />
+            <option value="$PROJECT_DIR$/../part9_mission" />
+          </set>
+        </option>
+        <option name="resolveModulePerSourceSet" value="false" />
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>
