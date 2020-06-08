@@ -7,11 +7,12 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.PackageManager;
 import android.os.BatteryManager;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
+import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -68,12 +69,12 @@ public class MainActivity extends AppCompatActivity {
                             Manifest.permission.PROCESS_OUTGOING_CALLS, Manifest.permission.READ_PHONE_STATE, Manifest.permission.READ_CALL_LOG
                     }, 100
             );
-
-            registerReceiver(brOn, new IntentFilter(Intent.ACTION_SCREEN_ON));
-            registerReceiver(brOff, new IntentFilter(Intent.ACTION_SCREEN_OFF));
-            registerReceiver(batteryReceiver, new IntentFilter(Intent.ACTION_POWER_CONNECTED));
-            registerReceiver(batteryReceiver, new IntentFilter(Intent.ACTION_POWER_DISCONNECTED));
         }
+
+        registerReceiver(brOn, new IntentFilter(Intent.ACTION_SCREEN_ON));
+        registerReceiver(brOff, new IntentFilter(Intent.ACTION_SCREEN_OFF));
+        registerReceiver(batteryReceiver, new IntentFilter(Intent.ACTION_POWER_CONNECTED));
+        registerReceiver(batteryReceiver, new IntentFilter(Intent.ACTION_POWER_DISCONNECTED));
     }
 
     @Override
@@ -94,13 +95,14 @@ public class MainActivity extends AppCompatActivity {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (requestCode == 100 && grantResults.length > 0) {
             if (grantResults[0] != PackageManager.PERMISSION_GRANTED
-            || grantResults[1] != PackageManager.PERMISSION_GRANTED) {
+                    || grantResults[1] != PackageManager.PERMISSION_GRANTED) {
                 Toast.makeText(this, "no permission", Toast.LENGTH_SHORT).show();
             }
         }
     }
 
     private void addListItem(String message) {
+        Log.d("MainActivity", "* * * * " + message);
         datas.add(message);
         adapter.notifyDataSetChanged();
     }

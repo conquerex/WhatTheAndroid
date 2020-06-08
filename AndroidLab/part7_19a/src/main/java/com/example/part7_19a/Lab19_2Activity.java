@@ -78,10 +78,13 @@ public class Lab19_2Activity extends AppCompatActivity implements View.OnClickLi
         builder.setContentText("Content Message");
         builder.setAutoCancel(true);
 
+        // 클릭하면 배터리 정보가 나오는 MainActivity로.
         Intent intent = new Intent(this, MainActivity.class);
+
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 10, intent, PendingIntent.FLAG_UPDATE_CURRENT);
         builder.setContentIntent(pendingIntent);
 
+        // NotiReceiver : Toast 출력
         PendingIntent pIntent1 = PendingIntent.getBroadcast(this, 0, new Intent(this, NotiReceiver.class), PendingIntent.FLAG_UPDATE_CURRENT);
         builder.addAction(new NotificationCompat.Action.Builder(android.R.drawable.ic_menu_share, "ACTION1", pIntent1).build());
 
