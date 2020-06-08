@@ -85,8 +85,8 @@ public class Lab19_2Activity extends AppCompatActivity implements View.OnClickLi
         Bitmap largeIcon = BitmapFactory.decodeResource(getResources(), R.drawable.noti_large);
         builder.setLargeIcon(largeIcon);
 
-        /**
-         * ing.......
-         */
+        if (view == ) {
+
+        }
     }
 }
