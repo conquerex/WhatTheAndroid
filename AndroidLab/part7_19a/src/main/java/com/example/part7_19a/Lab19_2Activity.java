@@ -8,7 +8,10 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.support.v4.app.NotificationCompat;
+import android.support.v4.app.Person;
+import android.support.v4.graphics.drawable.IconCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -85,8 +88,63 @@ public class Lab19_2Activity extends AppCompatActivity implements View.OnClickLi
         Bitmap largeIcon = BitmapFactory.decodeResource(getResources(), R.drawable.noti_large);
         builder.setLargeIcon(largeIcon);
 
-        if (view == ) {
+        if (view == bigPictureBtn) {
+            Bitmap bigPicture = BitmapFactory.decodeResource(getResources(), R.drawable.noti_big);
+            NotificationCompat.BigPictureStyle bigStyle = new NotificationCompat.BigPictureStyle(builder);
+            bigStyle.bigPicture(bigPicture);
+            builder.setStyle(bigStyle);
+        } else if (view == bigTextBtn) {
+            NotificationCompat.BigTextStyle bigTextStyle = new NotificationCompat.BigTextStyle(builder);
+            bigTextStyle.setSummaryText("Big Text Summary");
+            bigTextStyle.bigText("동해물과 백두산이 높고도 높구만. 너무 높아서 등산할 엄두가 나지 않습니다요.");
+            builder.setStyle(bigTextStyle);
+        } else if (view == inboxBtn) {
+            NotificationCompat.InboxStyle inboxStyle = new NotificationCompat.InboxStyle(builder);
+            inboxStyle.addLine("aaaaaaaa");
+            inboxStyle.addLine("bbbbb");
+            inboxStyle.addLine("cccccc");
+            inboxStyle.addLine("dddddddd");
+            inboxStyle.setSummaryText("Alphabet list");
+            builder.setStyle(inboxStyle);
+        } else if (view == progressBtn) {
+            Runnable runnable = new Runnable() {
+                @Override
+                public void run() {
+                    for (int i = 1; i <= 10; i++) {
+                        builder.setAutoCancel(false);
+                        builder.setOngoing(true);
+                        builder.setProgress(10, i, false);
+                        manager.notify(222, builder.build());
+                        if (i >= 10) {
+                            manager.cancel(222);
+                        }
+                        SystemClock.sleep(1000);
+                    }
+                }
+            };
+            Thread t = new Thread(runnable);
+            t.start();
+        } else if (view == headsupBtn) {
+            builder.setFullScreenIntent(pendingIntent, true);
+        } else if (view == messageBtn) {
+            Person sender1 = new Person.Builder()
+                    .setName("Jongkook")
+                    .setIcon(IconCompat.createWithResource(this, R.drawable.person1))
+                    .build();
 
+            Person sender2 = new Person.Builder()
+                    .setName("Barley")
+                    .setIcon(IconCompat.createWithResource(this, R.drawable.person2))
+                    .build();
+
+            NotificationCompat.MessagingStyle.Message message
+                    = new NotificationCompat.MessagingStyle.Message("Hello", System.currentTimeMillis(), sender2);
+            NotificationCompat.MessagingStyle style = new NotificationCompat.MessagingStyle(sender1)
+                    .addMessage("World", System.currentTimeMillis(), sender1)
+                    .addMessage(message);
+            builder.setStyle(style);
         }
+        manager.notify(222, builder.build());
     }
+
 }
