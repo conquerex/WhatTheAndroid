@@ -35,6 +35,7 @@
       <module fileurl="file://$PROJECT_DIR$/part7_19a/part7_19a.iml" filepath="$PROJECT_DIR$/part7_19a/part7_19a.iml" group="AndroidLab/part7_19a" />
       <module fileurl="file://$PROJECT_DIR$/part7_20/part7_20.iml" filepath="$PROJECT_DIR$/part7_20/part7_20.iml" group="AndroidLab/part7_20" />
       <module fileurl="file://$PROJECT_DIR$/part7_20_aidl/part7_20_aidl.iml" filepath="$PROJECT_DIR$/part7_20_aidl/part7_20_aidl.iml" group="AndroidLab/part7_20_aidl" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/part7_20a/part7_20a.iml" filepath="$PROJECT_DIR$/.idea/modules/part7_20a/part7_20a.iml" group="AndroidLab/part7_20a" />
       <module fileurl="file://$PROJECT_DIR$/part7_21/part7_21.iml" filepath="$PROJECT_DIR$/part7_21/part7_21.iml" group="AndroidLab/part7_21" />
       <module fileurl="file://$PROJECT_DIR$/part7_21_provider/part7_21_provider.iml" filepath="$PROJECT_DIR$/part7_21_provider/part7_21_provider.iml" group="AndroidLab/part7_21_provider" />
       <module fileurl="file://$PROJECT_DIR$/part7_mission/part7_mission.iml" filepath="$PROJECT_DIR$/part7_mission/part7_mission.iml" group="AndroidLab/part7_mission" />
