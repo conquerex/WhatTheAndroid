@@ -47,8 +47,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 100);
         }
-        registerReceiver(receiver, new IntentFilter("com.example.PLAY_TO_ACTIVITY"));
 
+        // 데이터 공유, 1번째 방법
+        // startService() 함수로 실행, 브로드캐스트 리시버를 이용하는 방법
+        registerReceiver(receiver, new IntentFilter("com.example.PLAY_TO_ACTIVITY"));
         Intent intent = new Intent(this, PlayService.class);
         intent.putExtra("filePath", filePath);
         startService(intent);
@@ -57,6 +59,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View view) {
         if (view == playBtn) {
+            // Service쪽 Receiver 실행
             Intent intent = new Intent("com.example.PLAY_TO_SERVICE");
             intent.putExtra("mode", "start");
             sendBroadcast(intent);
@@ -78,6 +81,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
+    // progressBar를 증가시키기 위해서
     class ProgressThread extends Thread {
         @Override
         public void run() {
@@ -91,6 +95,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
+    // Service로부터 데이터를 받기 위한 Receiver
     BroadcastReceiver receiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {

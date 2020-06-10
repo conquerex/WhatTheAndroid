@@ -13,6 +13,7 @@ public class PlayService extends Service implements MediaPlayer.OnCompletionList
     MediaPlayer player;
     String filePath;
 
+    // Activity에서 실행시키는 Receiver
     BroadcastReceiver receiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
@@ -68,6 +69,8 @@ public class PlayService extends Service implements MediaPlayer.OnCompletionList
     public int onStartCommand(Intent intent, int flags, int startId) {
         // startService()를 사용했기에 onStartCommand를 오버라이드해서 사용
         filePath = intent.getStringExtra("filePath");
+
+        // 이미 Service가 이전에 구동되어 음악이 플레이되고 있는 상황
         if (player != null) {
             Intent aIntent = new Intent("com.example.PLAY_TO_ACTIVITY");
             aIntent.putExtra("mode", "restart");
@@ -85,9 +88,12 @@ public class PlayService extends Service implements MediaPlayer.OnCompletionList
 
     @Override
     public void onCompletion(MediaPlayer mediaPlayer) {
+        // 음악 play가 끝나면 activity에 알려준다
         Intent intent = new Intent("com.example.PLAY_TO_ACTIVITY");
         intent.putExtra("mode", "stop");
         sendBroadcast(intent);
+
+        // Service 자신을 종료시킨다.
         stopSelf();
     }
 }
