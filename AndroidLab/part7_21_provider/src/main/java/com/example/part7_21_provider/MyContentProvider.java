@@ -5,6 +5,7 @@ import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
+
 /**
  * Created by kkang
  * 깡샘의 안드로이드 프로그래밍 - 루비페이퍼
@@ -12,14 +13,11 @@ import android.net.Uri;
  */
 public class MyContentProvider extends ContentProvider {
     SQLiteDatabase db;
+
     public MyContentProvider() {
+        //
     }
 
-    @Override
-    public int delete(Uri uri, String selection, String[] selectionArgs) {
-        int id=db.delete("tb_data", selection, selectionArgs);
-        return id;
-    }
 
     @Override
     public String getType(Uri uri) {
@@ -28,30 +26,37 @@ public class MyContentProvider extends ContentProvider {
         throw new UnsupportedOperationException("Not yet implemented");
     }
 
-    @Override
-    public Uri insert(Uri uri, ContentValues values) {
-        db.insert("tb_data", null, values);
-        return null;
-    }
-
+    // 생명주기 함수는 onCreate 하나뿐
     @Override
     public boolean onCreate() {
-        DBHelper helper=new DBHelper(getContext());
-        db=helper.getWritableDatabase();
+        DBHelper helper = new DBHelper(getContext());
+        db = helper.getWritableDatabase();
         return false;
     }
 
     @Override
     public Cursor query(Uri uri, String[] projection, String selection,
                         String[] selectionArgs, String sortOrder) {
-        Cursor cursor=db.query("tb_data", projection, selection, selectionArgs, null, null, sortOrder);
+        Cursor cursor = db.query("tb_data", projection, selection, selectionArgs, null, null, sortOrder);
         return cursor;
     }
 
     @Override
     public int update(Uri uri, ContentValues values, String selection,
                       String[] selectionArgs) {
-        int id=db.update("tb_data", values, selection, selectionArgs);
-        return  id;
+        int id = db.update("tb_data", values, selection, selectionArgs);
+        return id;
+    }
+
+    @Override
+    public int delete(Uri uri, String selection, String[] selectionArgs) {
+        int id = db.delete("tb_data", selection, selectionArgs);
+        return id;
+    }
+
+    @Override
+    public Uri insert(Uri uri, ContentValues values) {
+        db.insert("tb_data", null, values);
+        return null;
     }
 }

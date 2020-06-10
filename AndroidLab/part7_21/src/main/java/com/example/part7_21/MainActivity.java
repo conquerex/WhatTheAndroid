@@ -14,12 +14,13 @@ import android.widget.SimpleAdapter;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+
 /**
  * Created by kkang
  * 깡샘의 안드로이드 프로그래밍 - 루비페이퍼
  * 위의 교재에 담겨져 있는 코드로 설명 및 활용 방법은 교제를 확인해 주세요.
  */
-public class MainActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemClickListener, AdapterView.OnItemLongClickListener{
+public class MainActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemClickListener, AdapterView.OnItemLongClickListener {
 
     ListView listView;
     EditText nameView;
@@ -38,44 +39,48 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        listView=findViewById(R.id.lab1_listview);
-        nameView= findViewById(R.id.lab1_name);
-        phoneView= findViewById(R.id.lab1_phone);
-        btn=findViewById(R.id.lab1_btn);
+        listView = findViewById(R.id.lab1_listview);
+        nameView = findViewById(R.id.lab1_name);
+        phoneView = findViewById(R.id.lab1_phone);
+        btn = findViewById(R.id.lab1_btn);
 
         listView.setOnItemClickListener(this);
         listView.setOnItemLongClickListener(this);
         btn.setOnClickListener(this);
 
-        uri=Uri.parse("content://com.example.part.Provider");
+        // ContentProvider 식별자
+        // Scheme : content://
+        // host   : com.example.part.Provider
+        // path   : (ex) /user/1
+        // host는 이용하고자하는 콘텐츠 프로바이더가 자신의 AndroidManifest.xml 파일에 등록될 때 <provider> 태그의 authorities 속성값이다.
+        uri = Uri.parse("content://com.example.part.Provider");
         setAdapter();
-
-        
     }
 
-    private void setAdapter(){
-        datas=new ArrayList<>();
-        Cursor cursor=getContentResolver().query(uri, null, null, null, null);
-        while (cursor.moveToNext()){
-            HashMap<String, String> map=new HashMap<>();
+    // 항목 구성을 위한 query() 호출
+    private void setAdapter() {
+        datas = new ArrayList<>();
+        Cursor cursor = getContentResolver().query(uri, null, null, null, null);
+        while (cursor.moveToNext()) {
+            HashMap<String, String> map = new HashMap<>();
             map.put("id", cursor.getString(0));
             map.put("name", cursor.getString(1));
             map.put("phone", cursor.getString(2));
             datas.add(map);
         }
-        SimpleAdapter adapter=new SimpleAdapter(this, datas, android.R.layout.simple_list_item_2,
+        SimpleAdapter adapter = new SimpleAdapter(this, datas, android.R.layout.simple_list_item_2,
                 new String[]{"name", "phone"}, new int[]{android.R.id.text1, android.R.id.text2});
         listView.setAdapter(adapter);
     }
 
     @Override
     public void onClick(View v) {
-        if(isUpdate){
+        if (isUpdate) {
             //update.......
-            String name=nameView.getText().toString();
-            String phone=phoneView.getText().toString();
-            if(!name.equals("") && !phone.equals("")){
-                ContentValues values=new ContentValues();
+            String name = nameView.getText().toString();
+            String phone = phoneView.getText().toString();
+            if (!name.equals("") && !phone.equals("")) {
+                ContentValues values = new ContentValues();
                 values.put("name", name);
                 values.put("phone", phone);
                 getContentResolver().update(uri, values, "_id=?", new String[]{_id});
@@ -83,13 +88,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
             nameView.setText("");
             phoneView.setText("");
-            isUpdate=false;
-        }else {
+            isUpdate = false;
+        } else {
             //insert.......
-            String name=nameView.getText().toString();
-            String phone=phoneView.getText().toString();
-            if(!name.equals("") && !phone.equals("")){
-                ContentValues values=new ContentValues();
+            String name = nameView.getText().toString();
+            String phone = phoneView.getText().toString();
+            if (!name.equals("") && !phone.equals("")) {
+                ContentValues values = new ContentValues();
                 values.put("name", name);
                 values.put("phone", phone);
                 getContentResolver().insert(uri, values);
@@ -102,16 +107,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        HashMap<String, String> map=datas.get(position);
+        HashMap<String, String> map = datas.get(position);
         nameView.setText(map.get("name"));
         phoneView.setText(map.get("phone"));
-        _id=map.get("id");
-        isUpdate=true;
+        _id = map.get("id");
+        isUpdate = true;
     }
 
     @Override
     public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-        HashMap<String, String> map=datas.get(position);
+        HashMap<String, String> map = datas.get(position);
         getContentResolver().delete(uri, "_id=?", new String[]{map.get("id")});
         setAdapter();
         return false;
