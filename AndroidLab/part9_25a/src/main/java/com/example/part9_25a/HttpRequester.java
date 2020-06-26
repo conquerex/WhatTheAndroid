@@ -1,6 +1,7 @@
 package com.example.part9_25a;
 
 import android.os.AsyncTask;
+import android.util.Log;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -51,10 +52,11 @@ public class HttpRequester {
             try {
                 URL text = new URL(url);
                 HttpURLConnection http = (HttpURLConnection) text.openConnection();
-                http.setRequestProperty("Content-type", "application/x-www-form-urlencoded;charset=UTF-8");
+//                http.setRequestProperty("Content-type", "application/x-www-form-urlencoded;charset=UTF-8");
+//                http.setRequestProperty("Content-type", "application/json");
                 http.setConnectTimeout(10000);
                 http.setReadTimeout(10000);
-                http.setRequestMethod("POST");
+                http.setRequestMethod("GET");
                 http.setDoInput(true);
                 http.setDoOutput(true);
 
@@ -73,6 +75,7 @@ public class HttpRequester {
                     // 데이터 서버 전송
                     pw = new PrintWriter(new OutputStreamWriter(http.getOutputStream(), "UTF-8"));
                     pw.write(postData);
+                    Log.d("HttpRequester", "* * * postData : " + postData);
                     pw.flush();
                 }
                 // 서버로부터 데이터 수신
@@ -80,6 +83,7 @@ public class HttpRequester {
                 StringBuffer sb = new StringBuffer();
                 String inputLine;
                 while ((inputLine = in.readLine()) != null) {
+                    Log.d("HttpRequester", "* * * inputLine : " + inputLine);
                     sb.append(inputLine);
                 }
                 response = sb.toString();
