@@ -2,11 +2,11 @@ package com.example.part11_34
 
 import android.graphics.Rect
 import android.graphics.drawable.GradientDrawable
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.support.v4.view.ViewCompat
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
+import androidx.core.view.ViewCompat
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -68,26 +68,26 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        recyclerView.layoutManager=LinearLayoutManager(this)
+        recyclerView.layoutManager= androidx.recyclerview.widget.LinearLayoutManager(this)
         recyclerView.adapter=MyAdapter(list)
         recyclerView.addItemDecoration(MyDecoration())
     }
 
-    class HeaderViewHolder(view: View): RecyclerView.ViewHolder(view){
+    class HeaderViewHolder(view: View): androidx.recyclerview.widget.RecyclerView.ViewHolder(view){
         val headerView=view.itemHeaderView
     }
-    class DataViewHolder(view: View): RecyclerView.ViewHolder(view){
+    class DataViewHolder(view: View): androidx.recyclerview.widget.RecyclerView.ViewHolder(view){
         val nameViw=view.itemNameView
         val dateView=view.itemDateView
         val personView=view.itemPersonView
     }
 
-    class MyAdapter(val list: MutableList<ItemVO>): RecyclerView.Adapter<RecyclerView.ViewHolder>(){
+    class MyAdapter(val list: MutableList<ItemVO>): androidx.recyclerview.widget.RecyclerView.Adapter<androidx.recyclerview.widget.RecyclerView.ViewHolder>(){
         override fun getItemViewType(position: Int): Int {
             return list.get(position).type
         }
 
-        override fun onCreateViewHolder(p0: ViewGroup, p1: Int): RecyclerView.ViewHolder {
+        override fun onCreateViewHolder(p0: ViewGroup, p1: Int): androidx.recyclerview.widget.RecyclerView.ViewHolder {
             if(p1==ItemVO.TYPE_HEADER){
                 val layoutInflater = LayoutInflater.from(p0.context)
                 return HeaderViewHolder(layoutInflater.inflate(R.layout.item_header, p0, false))
@@ -97,7 +97,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        override fun onBindViewHolder(p0: RecyclerView.ViewHolder, p1: Int) {
+        override fun onBindViewHolder(p0: androidx.recyclerview.widget.RecyclerView.ViewHolder, p1: Int) {
             val itemVO=list.get(p1)
             if(itemVO.type==ItemVO.TYPE_HEADER){
                 val viewHolder=p0 as HeaderViewHolder
@@ -125,8 +125,8 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    inner class MyDecoration: RecyclerView.ItemDecoration(){
-        override fun getItemOffsets(outRect: Rect, view: View, parent: RecyclerView, state: RecyclerView.State) {
+    inner class MyDecoration: androidx.recyclerview.widget.RecyclerView.ItemDecoration(){
+        override fun getItemOffsets(outRect: Rect, view: View, parent: androidx.recyclerview.widget.RecyclerView, state: androidx.recyclerview.widget.RecyclerView.State) {
             super.getItemOffsets(outRect, view, parent, state)
             val index=parent.getChildAdapterPosition(view)
             val itemVO=list.get(index)

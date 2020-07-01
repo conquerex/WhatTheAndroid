@@ -2,10 +2,9 @@ package com.example.part9_25a;
 
 import android.graphics.Bitmap;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.TextView;
-
+import androidx.appcompat.app.AppCompatActivity;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -38,10 +37,13 @@ public class Lab25_2Activity extends AppCompatActivity {
         imageView = findViewById(R.id.lab2_image);
 
         queue = Volley.newRequestQueue(this);
+        // 문자열 Request 정보를 담은 StringRequest 생성
         JsonObjectRequest jsonRequest = new JsonObjectRequest(Request.Method.GET, "https://reqres.in/api/users?page=2", null,
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
+                        // 서버 응답 후 사후 처리
+                        // JSONObject에서 데이터 획득
                         try {
                             Log.d("Lab25_2Activity", "* * * " + response.toString());
                             titleView.setText(response.getString("per_page"));

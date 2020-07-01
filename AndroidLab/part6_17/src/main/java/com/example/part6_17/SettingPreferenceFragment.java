@@ -4,8 +4,8 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.support.v7.preference.Preference;
-import android.support.v7.preference.PreferenceFragmentCompat;
+import androidx.preference.Preference;
+import androidx.preference.PreferenceFragmentCompat;
 /**
  * Created by kkang
  * 깡샘의 안드로이드 프로그래밍 - 루비페이퍼
@@ -58,7 +58,7 @@ public class SettingPreferenceFragment extends PreferenceFragmentCompat {
     };
 
     @Override
-    public void onNavigateToScreen(android.support.v7.preference.PreferenceScreen preferenceScreen) {
+    public void onNavigateToScreen(androidx.preference.PreferenceScreen preferenceScreen) {
         Intent intent = new Intent(getActivity(), Lab17_2Activity.class)
                 .putExtra(Lab17_2Activity.TARGET_SETTING_PAGE, preferenceScreen.getKey());
         startActivity(intent);

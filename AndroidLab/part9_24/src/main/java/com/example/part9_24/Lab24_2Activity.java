@@ -2,11 +2,9 @@ package com.example.part9_24;
 
 import android.os.Bundle;
 import android.sax.Element;
-import android.sax.EndElementListener;
-import android.sax.EndTextElementListener;
 import android.sax.RootElement;
 import android.sax.StartElementListener;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.util.Xml;
 import android.view.View;
 import android.widget.Button;

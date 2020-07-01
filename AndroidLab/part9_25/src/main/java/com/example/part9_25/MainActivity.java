@@ -2,8 +2,8 @@ package com.example.part9_25;
 
 import android.graphics.Bitmap;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.widget.ImageView;
 import android.widget.TextView;
 

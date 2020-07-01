@@ -1,6 +1,6 @@
 package com.example.part10_30.datasource;
 
-import android.arch.paging.DataSource;
+import androidx.paging.DataSource;
 /**
  * Created by kkang
  * 깡샘의 안드로이드 프로그래밍 - 루비페이퍼

@@ -2,11 +2,7 @@ package com.example.part9_26;
 
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
-import android.app.Service;
-import android.content.Intent;
 import android.os.Build;
-import android.os.IBinder;
-import android.util.Log;
 
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
@@ -30,7 +26,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         String msg=data.get("msg");
 
         NotificationManager manager=(NotificationManager)getSystemService(NOTIFICATION_SERVICE);
-        android.support.v4.app.NotificationCompat.Builder builder=null;
+        androidx.core.app.NotificationCompat.Builder builder=null;
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             String channelId = "one-channel";
             String channelName = "My Channel One";
@@ -39,10 +35,10 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
             channel.setDescription(channelDescription);
 
             manager.createNotificationChannel(channel);
-            builder = new android.support.v4.app.NotificationCompat.Builder(this, channelId);
+            builder = new androidx.core.app.NotificationCompat.Builder(this, channelId);
 
         } else {
-            builder = new android.support.v4.app.NotificationCompat.Builder(this);
+            builder = new androidx.core.app.NotificationCompat.Builder(this);
         }
 
         builder.setSmallIcon(android.R.drawable.ic_notification_overlay);

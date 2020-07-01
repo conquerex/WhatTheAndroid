@@ -9,10 +9,10 @@ import android.graphics.BitmapFactory;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.SystemClock;
-import android.support.v4.app.NotificationCompat;
-import android.support.v4.app.Person;
-import android.support.v4.graphics.drawable.IconCompat;
-import android.support.v7.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.Person;
+import androidx.core.graphics.drawable.IconCompat;
+import androidx.appcompat.app.AppCompatActivity;
 
 import android.view.View;
 import android.widget.Button;
@@ -94,7 +94,7 @@ public class Lab19_2Activity extends AppCompatActivity implements View.OnClickLi
 
         if(v==bigPictureBtn){
             Bitmap bigPicture=BitmapFactory.decodeResource(getResources(), R.drawable.noti_big);
-            NotificationCompat.BigPictureStyle bigStyle=new android.support.v4.app.NotificationCompat.BigPictureStyle(builder);
+            NotificationCompat.BigPictureStyle bigStyle=new androidx.core.app.NotificationCompat.BigPictureStyle(builder);
             bigStyle.bigPicture(bigPicture);
             builder.setStyle(bigStyle);
         }else if(v==bigTextBtn){

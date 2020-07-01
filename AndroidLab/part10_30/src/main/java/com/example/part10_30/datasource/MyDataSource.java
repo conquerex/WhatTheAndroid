@@ -1,7 +1,7 @@
 package com.example.part10_30.datasource;
 
-import android.arch.paging.PageKeyedDataSource;
-import android.support.annotation.NonNull;
+import androidx.paging.PageKeyedDataSource;
+import androidx.annotation.NonNull;
 import android.util.Log;
 
 import com.example.part10_30.MyApplication;

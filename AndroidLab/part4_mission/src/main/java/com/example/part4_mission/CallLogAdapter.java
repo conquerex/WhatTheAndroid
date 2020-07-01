@@ -3,8 +3,8 @@ package com.example.part4_mission;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import android.support.v4.content.res.ResourcesCompat;
-import android.text.Layout;
+import androidx.core.content.res.ResourcesCompat;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;

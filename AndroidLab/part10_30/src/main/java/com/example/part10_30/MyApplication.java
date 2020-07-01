@@ -1,7 +1,7 @@
 package com.example.part10_30;
 
 import android.app.Application;
-import android.arch.persistence.room.Room;
+import androidx.room.Room;
 import android.content.Context;
 
 import com.example.part10_30.retrofit.RetrofitFactory;

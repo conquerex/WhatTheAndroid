@@ -1,10 +1,9 @@
 package com.example.part10_30.room;
 
-import android.arch.paging.DataSource;
-import android.arch.persistence.room.Dao;
-import android.arch.persistence.room.Insert;
-import android.arch.persistence.room.Query;
-import android.content.ClipData;
+import androidx.paging.DataSource;
+import androidx.room.Dao;
+import androidx.room.Insert;
+import androidx.room.Query;
 
 
 import com.example.part10_30.model.ItemModel;

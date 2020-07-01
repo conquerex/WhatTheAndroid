@@ -1,7 +1,7 @@
 package com.example.part10_30.room;
 
-import android.arch.persistence.room.Database;
-import android.arch.persistence.room.RoomDatabase;
+import androidx.room.Database;
+import androidx.room.RoomDatabase;
 
 import com.example.part10_30.model.ItemModel;
 

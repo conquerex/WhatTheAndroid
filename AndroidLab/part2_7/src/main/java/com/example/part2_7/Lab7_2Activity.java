@@ -1,6 +1,6 @@
 package com.example.part2_7;
 
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 /**
  * Created by kkang
