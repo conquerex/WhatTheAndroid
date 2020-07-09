@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "26304895964",
+    "firebase_url": "https://kookproj.firebaseio.com",
+    "project_id": "kookproj",
+    "storage_bucket": "kookproj.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:26304895964:android:aa49e5172ebf4e43c30d19",
+        "android_client_info": {
+          "package_name": "com.example.part9_26a"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "26304895964-i4kd33vboqv04q2qrev5eg6ke67rag2o.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.part9_26a",
+            "certificate_hash": "ad8e5cf3655951c234240c996a79785bc3ce8a6b"
+          }
+        },
+        {
+          "client_id": "26304895964-9ab88pie674tgr3ac15tijitknlei8s6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyANmsbUN1DOwnxrp7Bgk3XMPpjQFrl3_w4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "26304895964-9ab88pie674tgr3ac15tijitknlei8s6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
