@@ -91,6 +91,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         }
 
                         // Get new Instance ID token
+                        // FCM 서버로부터 얻은 키값 - 이 값을 서버 DB에 저장한다.
                         String token = task.getResult().getToken();
 
                         // Log and toast

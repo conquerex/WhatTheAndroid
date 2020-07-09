@@ -13,6 +13,9 @@ import com.google.firebase.messaging.RemoteMessage;
 
 import java.util.Map;
 
+/**
+ * appToken을 획득했다는 가정 하에서 진
+ */
 public class MyFirebaseMessagingService extends FirebaseMessagingService {
     public MyFirebaseMessagingService() {
         //
@@ -20,8 +23,6 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
     @Override
     public void onMessageReceived(@NonNull RemoteMessage remoteMessage) {
-
-        String from = remoteMessage.getFrom();
 
         Map<String, String> data = remoteMessage.getData();
         String msg = data.get("msg");
