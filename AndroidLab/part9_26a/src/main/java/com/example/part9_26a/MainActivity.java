@@ -7,6 +7,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 import android.os.SystemClock;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,6 +22,11 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.iid.InstanceIdResult;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
@@ -73,13 +79,33 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         sendBtn.setEnabled(false);
         msgEdit.setEnabled(false);
+
+
+        FirebaseInstanceId.getInstance().getInstanceId()
+                .addOnCompleteListener(new OnCompleteListener<InstanceIdResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<InstanceIdResult> task) {
+                        if (!task.isSuccessful()) {
+                            Log.w("TAG", "getInstanceId failed", task.getException());
+                            return;
+                        }
+
+                        // Get new Instance ID token
+                        String token = task.getResult().getToken();
+
+                        // Log and toast
+                        Log.d("TAG", "* * * " + token);
+                        Toast.makeText(MainActivity.this, token, Toast.LENGTH_SHORT).show();
+                    }
+                });
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        st = new SocketThread();
-        st.start();
+        // firebase 테스트를 위한 아래 주석처리
+//        st = new SocketThread();
+//        st.start();
     }
 
     @Override
@@ -88,11 +114,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         flagConnection = false;
         isConnected = false;
-
+/*
         if (socket != null) {
-            flagRead = false;
-            writeHandler.getLooper().quit();
             try {
+                flagRead = false;
+                writeHandler.getLooper().quit();
                 bout.close();
                 bin.close();
                 socket.close();
@@ -100,6 +126,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 e.printStackTrace();
             }
         }
+        */
     }
 
     private void showToast(String message) {
