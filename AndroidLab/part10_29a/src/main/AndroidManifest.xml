@@ -13,14 +13,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
-        android:name=".MyApp" >
+        android:name="com.example.part10_29a.MyApp" >
 
-        <activity android:name=".MainActivity">
+        <activity android:name="com.example.part10_29a.MainActivity">
         </activity>
-        <activity android:name=".Lab25_2Activity">
+        <activity android:name="com.example.part10_29a.Lab25_2Activity">
         </activity>
 
-        <activity android:name=".Lab25_3Activity">
+        <activity android:name="com.example.part10_29a.Lab25_3Activity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
