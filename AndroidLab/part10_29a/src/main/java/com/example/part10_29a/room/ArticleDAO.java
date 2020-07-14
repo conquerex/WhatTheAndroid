@@ -17,5 +17,5 @@ public interface ArticleDAO {
     void insertAll(ItemModel... users);
 
     @Query("delete from article")
-    List<ItemModel> deleteAll();
+    void deleteAll();
 }
