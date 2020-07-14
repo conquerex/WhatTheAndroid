@@ -4,7 +4,7 @@
     <data>
         <variable
             name="item"
-            type="com.example.part10_27a.ItemModel" />
+            type="com.example.part10_28a.ItemModel" />
     </data>
 
     <LinearLayout
