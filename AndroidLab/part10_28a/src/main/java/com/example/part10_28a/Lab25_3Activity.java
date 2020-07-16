@@ -32,9 +32,15 @@ public class Lab25_3Activity extends AppCompatActivity {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_lab25_3);
         binding.lab3List.setLayoutManager(new LinearLayoutManager(this));
 
+        // ViewModelProviders.of(this).get()
+        // 액티비티 스코프 내에게서 싱글턴. 여러번 호출해도 한번만 생성
+        // 뷰모델 객체가 생성되면 화면회전과 같은 상황에서도 뷰모델 객체는 소멸되지 않음. 데이터 유지
         MyViewModel viewModel = ViewModelProviders.of(this).get(MyViewModel.class);
+
+        // 뷰모델 데이터를 콜백함수로 받을 수 있다.
         viewModel.getNews().observe(this, itemModels -> {
-            MyAdapter adapter = new MyAdapter(itemModels);
+            // onChanged 함수 내부 : 비동기 프로그래밍에 유용
+           MyAdapter adapter = new MyAdapter(itemModels);
             binding.lab3List.setAdapter(adapter);
         });
     }
