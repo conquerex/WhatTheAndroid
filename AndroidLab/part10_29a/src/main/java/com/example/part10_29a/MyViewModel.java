@@ -27,7 +27,10 @@ public class MyViewModel extends ViewModel {
     private static final String API_KEY = "904c175c529149e28a13f6b227708f8f";
     RetrofitService networkService = RetrofitFactory.create();
 
+    // Database의 객체는 가급적 싱글턴으로 이용할 것을 권장
+    // DAO 클래스를 획득할 목적으로만 사용되므로 굳이 여러개의 객체를 생성할 이유가 없음
     AppDatabase db = Room.databaseBuilder(MyApp.getAppContext(), AppDatabase.class, "database-name").build();
+    // Database를 이용해 DAO 객체 획득
     ArticleDAO dao = db.articleDAO();
 
     public MutableLiveData<List<ItemModel>> getNews() {
@@ -39,6 +42,7 @@ public class MyViewModel extends ViewModel {
             return getNewsFromNetwork();
         } else {
             MutableLiveData<List<ItemModel>> liveData = new MutableLiveData<>();
+            // DB Select
             new GetAllThread(liveData).start();
             return liveData;
         }
@@ -64,6 +68,7 @@ public class MyViewModel extends ViewModel {
         return liveData;
     }
 
+    // DAO 클래스의 함수 호출은 백그라운드 스레드에서 실행하는 것이 기본
     class GetAllThread extends Thread {
         MutableLiveData<List<ItemModel>> liveData;
         public GetAllThread(MutableLiveData<List<ItemModel>> liveData) {
@@ -72,6 +77,7 @@ public class MyViewModel extends ViewModel {
 
         @Override
         public void run() {
+            // dao 함수 호출로 select
             List<ItemModel> daoData = dao.getAll();
             liveData.postValue(daoData);
         }
