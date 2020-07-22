@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import kotlinx.android.synthetic.main.activity_main.*
+
 /**
  * Created by kkang
  * 깡샘의 안드로이드 프로그래밍 - 루비페이퍼
@@ -20,13 +21,17 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     override fun onClick(v: View?) {
-        if(v==inheritanceTestBtn){
-            var customer=Customer()
+        if (v == inheritanceTestBtn) {
+            var customer = Customer()
+            // Super...someFun()
+            // Sub...0...20
             customer.someFun()
 
-        }else if(v==propertyTestBtn){
-            val obj=PropertyTest()
-            obj.greeting="kkang"
+        } else if (v == propertyTestBtn) {
+            val obj = PropertyTest()
+            obj.greeting = "kkang"
+            // Property Test
+            // greeting : HELLOKKANG , name: KIM
             resultTextView.setText("Property Test \n greeting : ${obj.greeting} , name: ${obj.name}")
         }
     }
