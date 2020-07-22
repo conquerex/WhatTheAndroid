@@ -1,4 +1,5 @@
 package com.example.part11_32
+
 /**
  * Created by kkang
  * 깡샘의 안드로이드 프로그래밍 - 루비페이퍼
@@ -6,21 +7,25 @@ package com.example.part11_32
  */
 class TypeTest {
     fun testType(): String {
-        val intData: Int=10
-        val result=intData.minus(5)
+        val intData: Int = 10
+        val result = intData.minus(5)
 
         val doubleData: Double = result.toDouble()
+        // testType() : 5.toDouble()
         return "testType() : $doubleData"
     }
+
     fun testArray(): String {
-        val array= arrayOf(1, "hello", false)
+        val array = arrayOf(1, "hello", false)
+        // testArray() : 3..false
         return "testArray() : ${array.size}..${array.get(2)}"
     }
-    fun testAny(obj : Any): String {
-        when(obj){
-            1->return "Int 1"
-            "Hello"->return "String Hello"
-            else ->return "unknown"
+
+    fun testAny(obj: Any): String {
+        when (obj) {
+            1 -> return "Int 1"
+            "Hello" -> return "String Hello"
+            else -> return "unknown"
         }
     }
 }
